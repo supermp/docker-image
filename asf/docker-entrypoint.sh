@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=$(dirname $0)
+DIR=/opt/asf
 
 while getopts 'u:p:' OPT; do
     case $OPT in
@@ -14,4 +14,4 @@ done
 sed -i 's/DefaultUsername/'"$USERNAME"'/' "$DIR"/config/default.json
 sed -i 's/DefaultPassword/'"$PASSWORD"'/' "$DIR"/config/default.json
 
-mono "$DIR"/ASF.exe
+exec "$@"
