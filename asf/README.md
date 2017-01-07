@@ -1,5 +1,5 @@
 # Usage:
 
 ```
-docker run -i --name asf supermp/asf -u USERNAME -p PASSWORD
+docker run -i --name asf -e USERNAME=user -e PASSWORD=pwd supermp/asf
 ```
