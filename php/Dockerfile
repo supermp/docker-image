@@ -1,4 +1,4 @@
-FROM php:7.0-fpm
+FROM php:7-fpm
 MAINTAINER supermp <supermp@foxmail.com>
 
 RUN apt-get update \
@@ -9,9 +9,7 @@ RUN apt-get update \
 RUN docker-php-ext-enable opcache \
  && docker-php-ext-install pdo_mysql zip
 
-ENV COMPOSER_VERSION 1.3.1
+ENV COMPOSER_VERSION 1.3.2
 RUN curl https://getcomposer.org/installer | php \
  && mv composer.phar /usr/local/bin/composer \
  && composer config -g repo.packagist composer https://packagist.phpcomposer.com
-
-VOLUME /var/www/html
