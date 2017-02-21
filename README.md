@@ -3,3 +3,4 @@
 - ArchiSteamFarm
 - Nginx
 - PHP
+- Kong
