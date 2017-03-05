@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  kong-database:
+    image: cassandra:2.2
+    volumes:
+      - cassandra:/var/lib/cassandra
+
+  kong:
+    image: supermp/kong
+    depends_on:
+      - kong-database
+    ports:
+      - 80:8000
+      - 443:8443
+      - 8001:8001
+    volumes:
+      - ./ssl:/usr/local/kong/ssl
+    environment:
+      KONG_DATABASE: cassandra
+      KONG_CASSANDRA_CONTACT_POINTS: kong-database
+    command: ["./wait-for-it.sh", "kong-database:9042", "--timeout=0", "--", "kong start"]
+
+  kong-dashboard:
+    image: pgbi/kong-dashboard
+    ports:
+      - 8080:8080
+
+volumes:
+  cassandra:
