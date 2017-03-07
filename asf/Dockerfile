@@ -1,7 +1,7 @@
 FROM mono
 MAINTAINER supermp <supermp@foxmail.com>
 
-ENV ASF_VERSION 2.2.2.4
+ENV ASF_VERSION 2.2.3.2
 
 WORKDIR /opt/asf
 
