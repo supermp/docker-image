@@ -4,3 +4,4 @@
 - Nginx
 - PHP
 - Kong
+- cnpmjs.org
