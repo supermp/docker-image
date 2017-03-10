@@ -9,7 +9,7 @@ RUN apt-get update \
 RUN docker-php-ext-enable opcache \
  && docker-php-ext-install pdo_mysql zip
 
-ENV COMPOSER_VERSION 1.3.2
+ENV COMPOSER_VERSION 1.4.0
 RUN curl https://getcomposer.org/installer | php \
  && mv composer.phar /usr/local/bin/composer \
  && composer config -g repo.packagist composer https://packagist.phpcomposer.com
