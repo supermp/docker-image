@@ -4,6 +4,7 @@
 
 - opcache
 - pdo_mysql
+- mcrypt
 - zip
 
 ## Tools
