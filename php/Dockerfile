@@ -12,7 +12,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-enable opcache \
- && docker-php-ext-configure gd --with-jpeg-dir --with-webp-dir --with-freetype-dir
+ && docker-php-ext-configure gd --with-jpeg-dir --with-webp-dir --with-freetype-dir \
  && docker-php-ext-install mysqli pdo_mysql gd mcrypt zip
 
 ENV COMPOSER_VERSION 1.4.1
