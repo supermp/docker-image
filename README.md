@@ -1,7 +1,7 @@
-# Some docker images
+# My docker images
 
 - ArchiSteamFarm
-- Nginx
 - PHP
 - Kong
 - cnpmjs.org
+- MantisBT
