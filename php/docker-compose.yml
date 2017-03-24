@@ -7,13 +7,12 @@ services:
       - app:/var/www/html
 
   nginx:
-    image: supermp/nginx
+    image: nginx:1.10
     ports:
       - 80:80
     volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
       - app:/var/www/html
-    environment:
-      WEB_ROOT: public
 
   mysql:
     image: mysql:5.7
