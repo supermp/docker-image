@@ -3,7 +3,7 @@ LABEL maintainer="supermp@foxmail.com"
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-        libpng12-dev \
+        libpng-dev \
         libjpeg-dev \
         libwebp-dev \
         libfreetype6-dev \
