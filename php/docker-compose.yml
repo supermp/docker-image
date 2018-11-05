@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   php:
@@ -7,7 +7,7 @@ services:
       - app:/var/www/html
 
   nginx:
-    image: nginx:1.10
+    image: nginx:1.14
     ports:
       - 80:80
     volumes:
@@ -23,14 +23,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
 
-  redis:
-    image: redis:3.2
-    ports:
-      - 6379:6379
-    volumes:
-      - redis:/data
-
 volumes:
   app:
   mysql:
-  redis:
