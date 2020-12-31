@@ -7,7 +7,7 @@ services:
       - app:/var/www/html
 
   nginx:
-    image: nginx:1.14
+    image: nginx:1.18
     ports:
       - 80:80
     volumes:

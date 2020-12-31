@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.4-fpm
 LABEL maintainer="supermp@foxmail.com"
 
 RUN apt-get update \
@@ -15,7 +15,7 @@ RUN docker-php-ext-enable opcache \
  && docker-php-ext-configure gd --with-jpeg-dir --with-webp-dir --with-freetype-dir \
  && docker-php-ext-install mysqli pdo_mysql gd mcrypt zip
 
-ENV COMPOSER_VERSION 1.7.3
+ENV COMPOSER_VERSION 2.0.8
 RUN curl https://getcomposer.org/installer | php \
  && mv composer.phar /usr/local/bin/composer \
  && composer config -g repo.packagist composer https://packagist.phpcomposer.com
